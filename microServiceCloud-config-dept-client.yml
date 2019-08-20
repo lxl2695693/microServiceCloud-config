@@ -1,0 +1,90 @@
+spring:
+  profiles:
+    active:
+      - dev
+
+---
+server:
+  port: 8001
+  
+spring:
+  profiles: dev
+  application:
+    name: microServiceCloud-config-dept-client
+    
+mybatis:
+  config-location: classpath:mybatis/mybatis-cfg.xml          #mybatis配置文件所在路径
+  type-aliases-package: cn.com.chenxin.model                 #所有实体类所在包
+  mapper-locations: classpath:mybatis/mapper/**/*.xml        #mapper映射文件
+
+spring:
+  application:
+    name: microServiceCloud-dept-provider
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource              #当前数据源操作类型
+    driver-class-name: oracle.jdbc.driver.OracleDriver      #oracle驱动包
+    url: jdbc:oracle:thin:@127.0.0.1:1521:ORCL           #数据库名称
+    username: HR
+    password: lxl3921522
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持链接数
+      initial-size: 5                                      # 初始化连接数
+      max-total: 5                                         # 最大连接数
+      max-wait-millis: 200                                # 等待连接获取的最大超时时间
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://localhost:7001/eureka  #eureka server 服务端地址 单机版配置
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: microServiceCloud-dept8001  #主机名称：服务名称修改
+    prefer-ip-address: true #访问路径显示IP地址
+
+info:
+  app.name: chenxin-microServiceCloud
+  company.name: www.chenxin.com
+  build.artifactId: @project.artifactId@
+  build.version: @project.version@
+
+---
+server:
+  port: 8002
+
+spring:
+  profiles: test
+  application:
+    name: microServiceCloud-config-dept-client
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-cfg.xml          #mybatis配置文件所在路径
+  type-aliases-package: cn.com.chenxin.model                 #所有实体类所在包
+  mapper-locations: classpath:mybatis/mapper/**/*.xml        #mapper映射文件
+
+spring:
+  application:
+    name: microServiceCloud-dept-provider
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource              #当前数据源操作类型
+    driver-class-name: oracle.jdbc.driver.OracleDriver      #oracle驱动包
+    url: jdbc:oracle:thin:@127.0.0.1:1521:ORCL           #数据库名称
+    username: HR
+    password: lxl3921522
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持链接数
+      initial-size: 5                                      # 初始化连接数
+      max-total: 5                                         # 最大连接数
+      max-wait-millis: 200                                # 等待连接获取的最大超时时间
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://localhost:7001/eureka  #eureka server 服务端地址 单机版配置
+      defaultZone: http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: microServiceCloud-dept8002  #主机名称：服务名称修改
+    prefer-ip-address: true #访问路径显示IP地址
+
+info:
+  app.name: chenxin-microServiceCloud
+  company.name: www.chenxin.com
+  build.artifactId: @project.artifactId@
+  build.version: @project.version@

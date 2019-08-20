@@ -18,8 +18,6 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/**/*.xml        #mapper映射文件
 
 spring:
-  application:
-    name: microServiceCloud-dept-provider
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource              #当前数据源操作类型
     driver-class-name: oracle.jdbc.driver.OracleDriver      #oracle驱动包
@@ -55,8 +53,6 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/**/*.xml        #mapper映射文件
 
 spring:
-  application:
-    name: microServiceCloud-dept-provider
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource              #当前数据源操作类型
     driver-class-name: oracle.jdbc.driver.OracleDriver      #oracle驱动包

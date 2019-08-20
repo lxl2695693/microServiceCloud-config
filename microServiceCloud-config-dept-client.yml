@@ -40,12 +40,6 @@ eureka:
     instance-id: microServiceCloud-dept8001  #主机名称：服务名称修改
     prefer-ip-address: true #访问路径显示IP地址
 
-info:
-  app.name: chenxin-microServiceCloud
-  company.name: www.chenxin.com
-  build.artifactId: @project.artifactId@
-  build.version: @project.version@
-
 ---
 server:
   port: 8002
@@ -82,9 +76,3 @@ eureka:
   instance:
     instance-id: microServiceCloud-dept8002  #主机名称：服务名称修改
     prefer-ip-address: true #访问路径显示IP地址
-
-info:
-  app.name: chenxin-microServiceCloud
-  company.name: www.chenxin.com
-  build.artifactId: @project.artifactId@
-  build.version: @project.version@

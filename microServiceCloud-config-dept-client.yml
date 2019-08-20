@@ -6,17 +6,16 @@ spring:
 ---
 server:
   port: 8001
-spring:
-  profiles: dev
-  application:
-    name: microServiceCloud-config-dept-client
-    
+  
 mybatis:
   config-location: classpath:mybatis/mybatis-cfg.xml        #mybatis配置文件所在路径
   type-aliases-package: cn.com.chenxin.model                 #所有实体类所在包
   mapper-locations: classpath:mybatis/mapper/**/*.xml        #mapper映射文件
 
 spring:
+  profiles: dev
+  application:
+    name: microServiceCloud-config-dept-client
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource              #当前数据源操作类型
     driver-class-name: oracle.jdbc.driver.OracleDriver      #oracle驱动包
@@ -40,17 +39,16 @@ eureka:
 ---
 server:
   port: 8002
-spring:
-  profiles: test
-  application:
-    name: microServiceCloud-config-dept-client
-
+  
 mybatis:
   config-location: classpath:mybatis/mybatis-cfg.xml          #mybatis配置文件所在路径
   type-aliases-package: cn.com.chenxin.model                 #所有实体类所在包
   mapper-locations: classpath:mybatis/mapper/**/*.xml        #mapper映射文件
 
 spring:
+  profiles: test
+  application:
+    name: microServiceCloud-config-dept-client
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource              #当前数据源操作类型
     driver-class-name: oracle.jdbc.driver.OracleDriver      #oracle驱动包
